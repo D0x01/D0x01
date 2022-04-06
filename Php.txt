@@ -1,0 +1,204 @@
+PHP
+
+Personal Home Page Tools - Rasmus criou para saber quantas pessoas entravam no seu site
+
+Personal Home Page Forms Interpreter
+
+Liberou o acesso aos programadores que adicionaram funcionalidades a linguagem
+
+Em Israel 2 amigos reescreveram o PHP (Zeev e Andy)
+
+A ideia inicial era dar funcionalidades a paginas pessoais
+
+------------ PHP HYPERTEXT PREPROCESSOR -----------
+
+PHP Tras novas funcionalidades para o HTML
+
+o PHP é processado no servidor através de um framework apache, com isso, é gerado um doc HTML que é o que é enviado ao cliente
+
+Server-side - Roda do lado do servidor, a funcao é somente enviar dados para o cliente
+
+
+--- SUPERTAG---
+
+<?php   
+
+?>
+
+comando de saida: 
+print\ printf\ echo
+
+<br> quebra de linha
+
+
+-----------------VARIAVEIS-----------------------
+
+
+$idade = 3;
+
+usa se o simbolo do cifrao para definir uma var
+todas var devem ser com letras minusculas 
+
+posso forcar uma var a ter um type com *typecast*
+
+int; float; string; 1 -> true; 0 -> false;
+
+------------------ Concatenação ->
+
+echo "," substituida por "."
+
+ex: echo $nome. " tem" .$idade. " anos!";
+
+mas é melhor usar as var independentes
+
+ex: "$nome tem $idade anos!"
+
+
+
+---------------OPERADORES ARITMETICOS----------------------------------------------
+
+Adicao +
+
+Subtracao -
+
+Multiplicacao  *
+
+Divisao /
+
+Modulo (resto) %
+
+Valores personalizados ------------
+
+mudar na url usando um "?" e chamar como $_[""];
+
+
+--------------------OPERADORES ESPECIAIS----------
+
+abs -> Valor absoluto 
+pow -> potenciacao
+sqrt -> raiz quadrada
+round -> arredondamento
+ceil -> arredondamento pra cima 
+floor -> arredondamento pra baixo 
+intval -> pegar o inteiro da variavel
+number-format -> formatar o valor em alguma outra formatacao 
+
+----------------OPERADORES DE ATRIBUIÇÃO---------------------
+
+usa se o "=" para atribuicao 
+
+$a = $a + $b
+
+"+=" $a += $b
+
+$a = $a + 1
+
+"++" -> $a++
+
+----------------------
+
+Adicao +=
+
+Sub -=
+
+Mult *=
+
+Div /=
+
+Mod %=
+
+Conc .=
+
+-----------------OP DE INCREMENTO------------
+
+Pré Incremento $a = $a + 1; ++$a
+
+Pós Incremento $a = $a + 1; $a++
+
+Pré Decremento $a = $a - 1; --$a
+
+Pós Decremento $a = $a - 1; $a--
+
+------REF EM VARIAVEIS------------
+
+$a = 3;
+$b = &$a;
+$b += 5;
+
+echo $a;   // a vai imprimir 8 pois está referenciada em b, ou seja, o que for b será a
+echo $b;   // vai imprimir 8
+
+---------------VARIAVEIS DE VARIAVEIS--------
+
+$site = "curso em video";
+$$site = "curso Php";
+
+$ antes de var cria a variavel variante
+
+isso transforma o conteudo da 1° var em uma var
+
+exemplo:
+$site = "curso em video";
+$$site = "curso Php";
+
+curso em video virou uma var que tem curso Php como conteudo 
+
+
+-------------------OPERADORES RELACIONAIS------------
+
+Maior >
+
+Menor <
+
+Maior ou igual >=
+
+Menor ou igual <=
+
+Igual ==
+
+Diferente !- <>
+
+Identico === (igual e do mesmo tipo)
+
+-------------OP UNARIO------------
+
+Funcao "se"
+
+expressao?verdadeiro:falso;
+
+$maior=//se// $a > $b ? $a : $b;
+
+
+$n1 = $_GET["a"];
+$n2 = $_GET["b"];
+$m = ($n1+$n2)/ 2;
+
+echo "<br>Os valores inseridos foram: $n1 e $n2";
+echo "<br>A nota média do aluno foi: $m";
+
+$sit = ($m >= 6)?"Aprovado":"Reprovado";
+
+echo "<br>A situacao do aluno é: $sit";
+
+-----------------OPERADORES LÓGICOS------------
+
+"e" "and" ou "&&"
+
+"ou" "or" "||"
+
+"xou" "xor" 
+
+"nao" "!"
+
+
+
+
+
+--------------------------OBS------
+
+// e # Comentarios InLine
+/* */ Comentarios InScope
+
+-----------------------------------
+
+

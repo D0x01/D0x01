@@ -1,0 +1,252 @@
+BANCO DE DADOS + SQL + MySQL
+
+--------------------------------------------
+
+Ficha -> Registros
+
+Pasta -> Tabela
+
+Amarios -> Arquivos
+
+---------------------------------------------
+
+Arquivo sequencial: era armazenado em fita
+
+Um registro é armazenado de forma um após o outro /
+
+Tras uma lentidao porem é melhor do que era antes (no papel)
+
+
+Arquivo de acesso direto: era armazenado em discos
+
+Os registros passaram a possuir indices o que facilitou o uso 
+
+
+CODASYL: Grande encontro onde foram discutidas novas tecnologias, aqui surgiu o COBOL que se preocupa com programação e com dados, 
+surgiu também o banco de dados.
+
+Banco de dados: 
+
+Base de dados: Dados do banco
+Sistema gerenciador (SGBD)
+Linguagem de exploração 
+Programas adicionais: otimizadores de dados e etc...
+
+IBM criou a hierarquia de dados, dados sao ligados
+criou tambem o modelo em rede, permitiam todo o armazenamento,
+o problema é que não era possivel a relacao entre 
+as bases de dados
+
+Modelo relacional criado por um profissional da ibm 
+é a evolução dos primeiros modelos criados, aqui é
+possivel ter a relacao entre as bases de dados.
+
+----------------------------------------------------
+
+SQL 
+
+Liguagem de consulta
+
+Dou um comando e ela me volta uma query (resposta a uma solicitação)
+
+ANSI E ISO padronizaram e surgiram os BDs
+
+Oracle, dBASE, IBM, MS SQL Server, MySQL, MariaDB,
+
+
+MySQL -> Criado na Suécia
+Projeto de programadores com a ideia de ser gratis
+
+GPL -> Licenca de software livre, gratis e aberto
+
+Sun MicroSystems -> comprou o sql em 2007
+Oracle comprou a sun em 2009 
+
+Os criadores do Mysql nao gostaram disso e criaram o MariaDB
+
+NASA GOOGLE EBAY BRADESCO -> Utilizam MySQL
+
+DDL -> Liguagem de definicao da estrutura da base de dados
+DML -> Manipulação, alterar dados, incluir, excluir e etc...
+DQL -> Qualquer solicitação 
+DCL -> Define os acessos ao banco 
+DTL -> Refere se as transacoes, qualquer solicitacao que pode ser feita e ele trara a query da melhor forma possivel em cima da DICA
+
+---------- D I C A -----------
+
+DURABILIDADE -> DADO TEM QUE PERMANECER DURAVEL
+
+ISOLAMENTO -> EXECUTADAS SEM IBTERFERENCIA
+
+CONSISTENCIA -> TUDO TEM QUE ESTAR OK ANTES E DEPOIS 
+
+ATOMICIDADE -> OU A TRANSACAO ACONTECE OU ELE VOLTA PARA O ESTADO ATOMICO QUE JA ESTAVA
+
+------------------------------
+
+Navio é o banco de dados -> colecção de dados organizados em grupos especificos chamados tabelas
+
+Tabelas sao os containers, são compostos por campos
+
+Registros são os dados dentro das tabelas,
+
+-----------------------------
+
+------ COMANDOS -------------
+
+Criar banco de dados: 
+
+create database nomedobanco;
+
+Criar tabelas: 
+
+create table pessoas(
+);
+
+describe -> descreve o que voce pedir para descrever
+
+para validar os campos nas tabelas, é necessário definir os tipos dos campos 
+
+drop database nomedobanco; apaga o banco
+
+insert into -> adiciona dados a tabelas 
+
+insert into pessoas
+(nome, id, idade)
+values
+('Daniel','2','19')
+
+select * from pessoas; -> mostrará tudo que houver dentro de "pessoas"
+
+Alter table -> Alterar dados da tabela
+
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+para posicionar como primeiro, uso o parametro first
+
+o modify altera o tipo primitivo e as constrangens
+
+alter table pessoas
+modify column profissao varchar(20) not null default '';
+
+o change é para mudar o nome 
+alter table pessoas
+change column profissao prof varchar(20);
+
+rename to -> modificar o nome da tabela inteira 
+
+alter table pessoas
+rename to gafanhotos;
+
+if not exists -> parametro usado em criações para coisas novas
+
+unique é unico, nao da para ter 2 do mesmo, não é igual uma primary key
+
+constrange insigned -> sem sinal, uso para quando algo nao poder ser negativo
+
+create table if not exists cursos(
+nome varchar(20) not null unique,
+descricao text,
+carga int unsigned,
+totaulas int unsigned,
+ano year default '2022'
+) default charset=utf8;
+
+
+Adicionar uma chave primaria
+alter table cursos
+add column id int first;
+
+alter table cursos
+add primary key(id);
+
+
+
+
+
+
+------------- Tipos primitivos ------------------
+
+numerico 
+inteiro -> tinyint, smallint, mediumint, bigint
+real -> decimal, float, double, real 
+lógico -> bit, boolean
+
+data/tempo 
+date, datetime, time stamp, time, year                          
+ 
+
+literais 
+caracteres -> char, varchar
+texto -> tinytext, text, mediumtext, longtext
+binarios -> tinyblob, blob, mediumblob, longblob
+coleções -> enum, set
+
+espacial
+geometry, point, polyng, multipolygn
+
+-----------------------------------------------
+
+Primary key (nao se repete) é utilizada para um registro ser feito por vezes limitadas
+
+Em banco de dados se cadastra data de nascimento e nao idade
+
+notnull -> define que eu tenho que preencher
+
+decimal(5,2) o numero apos a virgula é definido pelo numero apos a virgula
+
+default -> define o "default", ou seja, define o que é se ninguem inserir nada
+
+-----------------------------------------------
+
+parametros -> 
+para usar o utf 8
+default character set 
+default collate utf_general_ci
+
+-------------------------------------------------
+
+---------------- CÓDIGO ATÉ AULA 4 -------
+
+create database cadastro
+default character set utf8
+default collate utf8_general_ci;
+
+create table pessoas(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum("M", "F"),
+peso decimal(5,2),
+altura decimal(3,2),
+nacionalidade varchar(20) default 'Brasil',
+primary key (id)
+)default charset utf8;
+
+use cadastro;
+
+--------------------------------------------------
+
+Se vou adicionar registros nas tabelas e a sequencia de registros for a mesma que eu criei na tabela, nao preciso redigitar 
+
+insert into pessoas         se torna            insert into pessoas
+(nome, id, idade)                               values
+values                                          ('Daniel','2','19')
+('Daniel','2','19')
+
+
+---------------- codigo insert into ------------
+
+insert into pessoas
+
+values
+(DEFAULT, 'Ana', '2003-05-10', 'F', '77.0', '1.60', 'Brasil'),
+(DEFAULT, 'Evelin', '2003-06-10', 'F', '72.0', '1.70','Brasil'),
+(DEFAULT, 'Victoria', '2003-08-10', 'F',  '70.0', '1.65','Brasil');
+
+select * from pessoas;
+
+------------------------------------
+
+

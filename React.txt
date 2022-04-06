@@ -1,0 +1,16 @@
+REACT 
+
+O QUE É REACT?? 
+
+Biblioteca JS para criação de interfaces, 
+é uma SPA (Single page app),
+JSX para renderizar HTML,
+Aplica o Virtual DOM para apoio ao dev,
+Podemos adicionar a um projeto ou criar um novo projeto.
+
+instalação - ferramenta "Create React App";
+inicialização - "npm start" inicia o react
+
+ INICIALIZAÇÃO  ( cd "my-app"
+                 npm start )
+

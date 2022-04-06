@@ -1,0 +1,101 @@
+Study 
+
+HTTP 
+
+Hypertext Transfer Protocol
+
+Conjunto de regras
+
+Protocolo de transferencia de hypertextos
+
+Conversa entre servidor e browser
+
+Mensagem 
+
+-Pedido 
+
+- metodos definem o tipo do pedido, qual a acao que quero fazer no servidor
+
+- Recurso - Local onde irei enviar o pedido (URL)
+
+Todo pedido tem:
+
+- Headers - campos informativos
+
+- Body - conteudo que serve quanto para envio quanto para recebimento
+
+Resposta - 
+
+- Mostra já o status code
+
+200 pedido ok
+301 redirecionamento
+404 pagina nao encontrada (URL nao existente)
+500 Erro interno no servidor
+
+Nem toda resposta tem:
+
+- Headers - campos informativos
+
+- Body - conteudo que serve quanto para envio quanto para recebimento
+
+Request Message 
+ex: GET /index.html HTTP/1.1
+User-Agent: Mozilla/4.0
+Accept: text/html
+
+Response Message
+HTTP/1.1 200 OK
+Server: Express
+Content-Type: text/html
+
+<html>...</html>
+
+
+
+NO GIT BASH
+
+curl + https:// ... .com - conteúdo do body
+curl + -i https:// ... .com - conteúdo do header
+
+
+
+HTTP é feito baseado em cliente - servidor, logo, é algo simples para o facil entedimento do cliente
+
+
+É feito para ser Stateless - Não guarda estado, nao existe relações entre as conexões, jogar uma moeda.
+Usa sessões - Guardar a info para ser enviada na proxima conexao, para isso é usado cookies e storages, passam a mesmas informações varias vezes.
+
+HTTP é extensivel
+
+Atraves dos headers e do body eu posso fazer diversas trocas de informações entre cliente - servidor 
+
+
+
+
+
+Cliente
+
+é o user agent (maior parte da gente é o URL)
+Sempre o cliente que comeca a comunicação/ conversa (vamos fugir do padrao)
+
+Clientes tem acoes
+metodos http: 
+Get/ post/ put/ delete
+
+
+Servidor 
+
+Uma maquina em algum lugar do mundo preparada para ouvir/ receber/ responder a solicitação do cliente
+é responsavel por dar a resposta com o status code
+
+Proxies
+
+Ajudam a fazer o transporte de dados
+roteador por exemplo
+funcoes - cache para devolver respostas mais rapidas
+filtro - podemos manipular o que o proxie pode fazer
+load balancing - distribuição da carga
+autenticação e autorização - o proxie faz automaticamente (liberdade para navegar na internet)
+
+

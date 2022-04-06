@@ -1,0 +1,218 @@
+HTML
+
+HyperText Markup Lenguage
+
+Não é linguagem de programação, mas sim, de estilização
+
+É usada no front end
+
+É uma linguagem de formatação da pagina mostrada ao user
+
+É formada por tags que definem tudo que a pag faz
+
+---------------Titulos e paragrafos----------------------------
+
+Uso da tag <h> para titulos 
+
+Vai de h1 até h6 -> obs... Seguir hierarquia de 1 a 6
+
+Uso da tag <p> para paragrafos
+
+Uso da tag <br> para quebra de linhas 
+
+Uso de &nbsp para espaçar as palavras
+
+<hgroup> usada para um grupo de titulos
+
+Uso da tag <wbr> para quebra de palavra, se a palavra ficar na borda, ela vai para a linha de baixo
+
+Uso da tag <shy> para quebra de palavra, se a palavra ficar na borda com "-", ela vai para a linha de baixo
+
+-----------------------Simbolos especiais----------
+
+&lt >
+&gt <
+&le >=
+&ge <=
+
+&pound Libra
+&yen Yen
+&euro Euro
+
+&copy Copyrigth
+&reg  Registro
+&trade  TM
+
+&permil Simbolo permil
+&sum Soma
+&infin Infinito
+&times multiplicacao
+&plusm mais ou menos
+&oplus  soma no circulo
+&radic  raiz
+&ne  diferente
+
+&Delta
+&Lambda
+&omega
+&phi
+
+&Larr seta para esq
+&Rarr seta para dir
+&uarr seta para cima
+&darr seta para baixo
+&harr seta para os 2 lados 
+
+--------------------------------------------------
+
+Tag <b> para negrito
+
+Tag <i> para italico 
+
+Tag <em> letra inclinada e uma palavra em enfase
+
+Tag <del> risca a palavra 
+
+Tag <span> Define estilização de um pequeno trecho no texto <span style="text-decoration: underline;">
+
+style="text-align: center;" para alinhar o texto, estilo justify é onde se alinha em esq e dir
+
+identação -> após o ";" usar um "text-ident: ..px;"
+
+O que estiver na tag <style> no head será utilizado na pagina inteira 
+
+A tag <sup> eleva a palavra dentro da tag 
+A tag <sub> rebaixa a palavra dentro da tag 
+
+A tag <code> formata como código
+A tag <pre> é usada para indicicar que já existe uma predefinicao de formatação
+
+-----------------------------STYLE------------------------
+
+Declarar Style e onde eu quero o style e como eu quero o style
+
+RGB são 6 numeros\\ 2 para cada cor (RED GREEN BLUE)
+
+ex:
+ <style>
+        body {
+            background-color: crimson;
+            color: black;
+        }
+        p {
+            text-align: justify;
+            text-indent: 20px;
+        }
+    </style>
+
+Para usar o background de uma img salva na minha pasta, usa-se: 
+
+background-image: url("aquivaioarquivo.jpg");
+
+rgba -> consigo definir transparencia ocupando o lugar do "a"
+
+hsl -> tambem define cores, hill, saturation, ligth 
+
+----------------------------------------------------------------------------
+
+Para imagens usa se a tag <img>
+
+para definir de onde ela vem, é assim: 
+
+<img src="aquiVaioArquivo.jpg"/>
+
+GIMP -> Ferramenta semelhante ao Photoshop, porem, gratuita, diminuo o tamanho das imagens e etc...
+
+tag <figure> é para colocar imagens com semanticas diferentes 
+
+A tag <figcaption> Define uma legenda para a imagem 
+
+-------------------------------------------------------------------------
+
+Chamar a pagina de codigo com a estilizaçao CSS
+
+<link rel="stylesheet" type="text/css" href="Style/estilo.css"/>
+
+-----------------LISTAS-------------------------------------------------
+
+<nav> é uma tag para definir uma area de navegacao (menu de navegacao)
+
+Existem as Ordered Lists e as Unordered Lists
+
+<ol> e <ul> 
+
+Dentro das listas temos os itens da listas (<li>)
+
+<ol type="a"> a, b, c ...
+<ol type="i"> i, ii, iii ...
+<ol type="1"> 1, 2, 3 ...
+<ol type="A"> A, B, C...
+
+comecar de outro ponto a partir desses acima, se usa o parametro start
+
+<ol type="A" start="3"> comeca do C
+
+A diferenca da lista ol para a lista ul é que na lista ul usam se marcadores ao inves de ordens para marcacao  
+
+<ul type="circles"> circulos
+<ul type="disc"> padrao 
+<ul type="square"> quadrados
+
+---------------------------LINKS-------------------------------------------
+
+Usa se uma ancora para adicionar o link para redirecionar
+
+A tag usada para uma ancora é <a>
+
+para referenciar e colocar o link, usa se um hypertext reference (href)
+
+<a href="https...">
+
+target=_blank abre o link em outra janela 
+
+target=_self abre o link na mesma janela (padrao)
+
+-------------------------------------------------------------------------
+
+Quando usar id para formatar, no css eu chamo com #
+
+list-style: estilo das listas, independe se for ul ou ol
+
+-------------------------------------------------------------------------
+
+Estilizar margem
+
+Cima, dir, baixo, esq
+
+padding - espaço interno do objeto 
+
+-------------------------------------------------------------------------
+
+border-bottom define uma linha debaixo sobre o conteudo 
+
+-------------------------------------------------------------------------
+
+Fontes em CSS
+
+repositório de fontes -> google.com/fonts
+
+usa se o parametro font-face para importar uma fonte de um local 
+
+@font-face {
+
+}
+
+da se um nome e quando for chamar a fonte só chama pelo nome 
+
+importar pelo google fonts é só copiar e colar no @ e depois chamar conforme o google indica onde quiser usar
+
+
+-----------------------------------------------------------------------
+
+Section -> sessao
+
+Aside -> sessao lateral
+
+Footer -> sessao de rodapé
+
+Tags de semantica
